@@ -11,5 +11,8 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [svelte()]
+  integrations: [svelte()],
+
+  site: 'https://markie-maker.github.io', 
+  base: '/markie-maker'
 });
