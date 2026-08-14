@@ -23,7 +23,7 @@ import NavbarAstroComponent from '../components/navbar.svelte';
   </head>
   <body>
 
-      <NavbarAstroComponent client:only/>
+      <NavbarAstroComponent client:load/>
 
     <slot />
 
@@ -55,13 +55,8 @@ import NavbarAstroComponent from '../components/navbar.svelte';
     </footer>
 
     <script type="module">
-      import AOS from 'aos';
-
-      AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100,
-      });
+      import initAOS from '../components/AOSInit.ts'
+      initAOS()
     </script>
   </body>
 </html>
