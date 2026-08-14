@@ -33,7 +33,7 @@ body {
 
 /* AOS settings/configurations (use important to overide default settings)*/
 
-[data-aos="zoom-in"] {
+/* [data-aos="zoom-in"] {
   transform: scale(0.95) !important;
 }
 
@@ -43,7 +43,7 @@ body {
 
 body[data-aos-easing] [data-aos="zoom-in"].aos-animate {
   transform: none;
-}
+} */
 
 /* buttons animations and everything else */
 
