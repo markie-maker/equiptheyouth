@@ -47,6 +47,31 @@ body[data-aos-easing] [data-aos="zoom-in"].aos-animate {
 
 /* buttons animations and everything else */
 
+.image:hover {
+  transform: scale(1.05) !important;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.overlay-text {
+  transition: transform 0.3s ease-in-out;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(100%);
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(12px);
+}
+
+.image-wrapper:hover .overlay-text {
+  transform: translateY(0);
+}
+
+
 .button {
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
