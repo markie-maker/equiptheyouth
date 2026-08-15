@@ -3,49 +3,80 @@ import '../styles/global.css'
 import 'aos/dist/aos.css'
 import Layout from '../layouts/Layout.astro';
 import Section from '../layouts/Section.astro';
-import { Image, Picture } from 'astro:assets';
+import HeadlineAstroComponent from '../components/headline.astro';
+import ImageAstroComponent from '../components/image.astro';
+import PersonCardAstroComponent from '../components/person_card.astro';
+import GoalAccordianComponent from '../components/goal-accordian.svelte'
 
 import Button from '../components/button.astro';
 import AltButton from '../components/alt-button.astro';
 import soccer_image from '../assets/soccer.png'
+import football_picture from '../assets/football_picture.jpg'
+import placeholder_portrait from '../assets/placeholder_portrait.png'
+import tennis_photo from '../assets/tennis-photo.jpg'
 ---
 
 <Layout>
     <div class="flex h-svh w-full">
         <div class="flex flex-col w-1/2 h-full justify-center items-center px-16">
-            <h1 class="text-5xl heading w-full mb-3 text-[#222222]" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-delay="100" >Equipping young athletes to reach their full potential</h1>
+            <h1 class="text-5xl hero-heading w-full mb-3 text-[#222222]" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-delay="100" >Equipping young athletes to reach their full potential</h1>
             <p class="light text-2xl w-full mb-8 text-[#222222]" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-delay="100" >Committed to making sports equipment available to all.</p>
             <div class="flex justify-start gap-12 w-full">
-                                <div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300">
-                                    <Button href="/">Donate Now</Button>
-                                </div>
-                                <!-- .button class not automatically on only for the alt button -->
-                                <div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">
-                                    <AltButton classes='flex hover:gap-4 transition-all duration-300 ease-in-out hover:scale-105' href="/">Learn More <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#222222"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></AltButton>
-                                </div>
-            </div>
-        </div>
-        <div class="flex w-1/2 h-full rounded-bl-3xl bg-[#f1f1f1] p-8">
-            <div class="h-full w-full rounded-2xl overflow-hidden image-wrapper">
-                <Picture 
-                    src={soccer_image} 
-                    formats={['avif', 'webp']} 
-                    class="h-full w-full object-cover object-center image rounded-2xl"
-                    data-aos="zoom-in"
-                    data-aos-duration="1000"
-                    data-aos-delay="100"
-                    pictureAttributes={{ class: "h-full w-full display-block" }}
-                    loading={'eager'}
-                    quality={75}
-                    alt="Two kids playing soccer"
-                />
-                <div class="w-full h-auto light text-xl p-8 text-[#222222] overlay-text">
-                    <p>Photo by Ben Cheers: <br><a href="https://www.pexels.com/photo/photo-of-boys-playing-soccer-26546638/" class="underline">https://www.pexels.com/photo/photo-of-boys-playing-soccer-26546638/</a></p>
+                <div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300">
+                    <Button href="/">Donate Now</Button>
+                </div>
+                <!-- .button class not automatically on only for the alt button -->
+                <div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">
+                    <AltButton classes='flex hover:gap-4 transition-all duration-300 ease-in-out hover:scale-105' href="/">Learn More <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#222222"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></AltButton>
                 </div>
             </div>
         </div>
+        <div class="flex w-1/2 h-full rounded-bl-3xl bg-[#f1f1f1] p-8">
+            <ImageAstroComponent img={soccer_image} imageLink='https://www.pexels.com/photo/photo-of-boys-playing-soccer-26546638/' photoOwner="Ben Cheers"  />
+        </div>
     </div>
-    <!-- <Section>
-        
-    </Section> -->
+
+    <Section>
+            <HeadlineAstroComponent title='About' description='Small steps. Lasting impact.'>
+                <div class="flex gap-20">
+                    <div class="flex flex-col justify-center w-1/2" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-delay="100">
+                        <p class="text-xl">
+                            Participation in youth sports shouldn't come down to how much money you have. Equip the Youth is built on the simple belief that every child deserves the chance to play, grow, and compete. By collecting and distributing quality used gear for free, we are providing all youth in the community with the opportunity to play sports.
+                        </p>
+                        <br>
+                        <p class="text-xl">
+                            Equip the Youth is a startup non-profit based in French Valley/Temecula region founded in June 2026 with the purpose to redistribute used sports equipment to those who need it.
+                            We don't need years of experience or thousands of dollars to start making a difference today. Whether you are donating money or your child’s old sports gear to us, you can make our mission a reality to making sports available to all.
+                        </p>
+                    </div>
+                    <div class="w-1/2 bg-[#f1f1f1] rounded-2xl" >
+                        <ImageAstroComponent img={football_picture} imageLink='https://www.pexels.com/photo/boy-playing-football-209764/' photoOwner="Pixabay" classes='aspect-square' />
+                    </div>
+                </div>
+            </HeadlineAstroComponent>
+    </Section>
+    <Section>
+        <HeadlineAstroComponent title='Meet the Team' description='Learn more about who we are and our roles.'>
+            <div class="flex gap-12 w-full flex-wrap justify-center">
+                <PersonCardAstroComponent image={placeholder_portrait} name='Mark Waichigo' role='Lead Programmer • Webmaster' role_description='I built this website and also maintain it along with the non-profit email.'/>
+                <PersonCardAstroComponent image={placeholder_portrait} name='Kasoa Muya' role='Community Outreach Coordinator' role_description='I build relationships with local businesses and community members to secure partnerships and support our mission.'/>
+                <PersonCardAstroComponent image={placeholder_portrait} name='Ethan Munzaa' role='Social Media Manager • Treasury' role_description="I manage our organization's financial records while creating engaging digital content to grow our online presence."/>
+                <PersonCardAstroComponent image={placeholder_portrait} name='Adult' role='Advisor' role_description="I provide strategic guidance, mentorship, and oversight to help this non-profit to achieve it's goals."/>
+            </div>
+        </HeadlineAstroComponent>
+    </Section>
+    <Section>
+        <HeadlineAstroComponent title='Our Goals' description='Learn more about our non-profit and what we strive to achieve.'>
+            <div class="flex gap-20">
+                <div class="w-1/2 bg-[#f1f1f1] rounded-3xl h-200 p-4 flex flex-col gap-4">
+                    <GoalAccordianComponent  title="#1: Equipment Access & Distribution" description="Set up community donation hubs near local recreational parks across French Valley and surrounding SoCal neighborhoods at the end of the Fall and Winter sports seasons. The target is to collect, thoroughly sanitize, and distribute at least 500 pieces of essential sports gear (shoes, balls, and athletic wear) directly to local shelters and families in need each year." client:load />
+                    <GoalAccordianComponent  title="#2: Community Partnerships & Expansion" description="" client:load />
+                    <GoalAccordianComponent  title="#3: Financial & Operational Sustainability" description="" client:load />
+                </div>
+                <div class="w-1/2 bg-[#f1f1f1] rounded-2xl">
+                    <ImageAstroComponent img={tennis_photo} imageLink='https://www.pexels.com/photo/diverse-rackets-on-a-colorful-outdoor-court-30864601/' photoOwner='Rodrigo Ortega'/>   
+                </div>
+            </div>
+        </HeadlineAstroComponent>
+    </Section>
 </Layout>

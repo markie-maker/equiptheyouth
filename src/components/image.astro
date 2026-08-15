@@ -1,0 +1,30 @@
+---
+import { Picture } from 'astro:assets'
+
+interface Props {
+    img: ImageMetadata
+    imageLink: string
+    photoOwner: string
+    classes?: string
+}
+
+const { img, imageLink, photoOwner, classes = '' } = Astro.props
+---
+
+<div class="rounded-2xl overflow-hidden image-wrapper">
+    <Picture 
+        src={img} 
+        formats={['avif', 'webp']} 
+        class=`w-full object-cover object-center image rounded-2xl ${classes}`
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+        data-aos-delay="100"
+        pictureAttributes={{ class: `h-full w-full display-block flex items-center` }}
+        loading={'lazy'}
+        quality={75}
+        alt=`Image from ${imageLink}``
+    />
+    <div class="w-full h-auto light text-base p-8 text-[#222222] overlay-text">
+        <p>Photo by {photoOwner}: <br><a href={imageLink} class="underline">{imageLink}</a></p>
+    </div>
+</div>

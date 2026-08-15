@@ -24,10 +24,17 @@ body {
 }
 
 
-.heading {
+.hero-heading {
   font-family: "Urbanist", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
+  font-style: normal;
+}
+
+.heading {
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
   font-style: normal;
 }
 
