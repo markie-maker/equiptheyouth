@@ -60,6 +60,17 @@ body[data-aos-easing] [data-aos="zoom-in"].aos-animate {
 
 .image-wrapper {
   position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image-wrapper picture,
+.image-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .overlay-text {

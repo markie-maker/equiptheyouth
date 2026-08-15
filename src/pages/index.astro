@@ -32,7 +32,7 @@ import tennis_photo from '../assets/tennis-photo.jpg'
             </div>
         </div>
         <div class="flex w-1/2 h-full rounded-bl-3xl bg-[#f1f1f1] p-8">
-            <ImageAstroComponent img={soccer_image} imageLink='https://www.pexels.com/photo/photo-of-boys-playing-soccer-26546638/' photoOwner="Ben Cheers"  />
+            <ImageAstroComponent img={soccer_image} imageLink='https://www.pexels.com/photo/photo-of-boys-playing-soccer-26546638/' photoOwner="Ben Cheers" isAboveFold={true} />
         </div>
     </div>
 
@@ -68,13 +68,24 @@ import tennis_photo from '../assets/tennis-photo.jpg'
     <Section>
         <HeadlineAstroComponent title='Our Goals' description='Learn more about our non-profit and what we strive to achieve.'>
             <div class="flex gap-20">
-                <div class="w-1/2 bg-[#f1f1f1] rounded-3xl h-200 p-4 flex flex-col gap-4">
+                <div class="w-1/2 bg-[#f1f1f1] rounded-3xl p-4 flex flex-col gap-4">
                     <GoalAccordianComponent  title="#1: Equipment Access & Distribution" description="Set up community donation hubs near local recreational parks across French Valley and surrounding SoCal neighborhoods at the end of the Fall and Winter sports seasons. The target is to collect, thoroughly sanitize, and distribute at least 500 pieces of essential sports gear (shoes, balls, and athletic wear) directly to local shelters and families in need each year." client:load />
-                    <GoalAccordianComponent  title="#2: Community Partnerships & Expansion" description="" client:load />
-                    <GoalAccordianComponent  title="#3: Financial & Operational Sustainability" description="" client:load />
+                    <GoalAccordianComponent  title="#2: Community Partnerships & Expansion" description="Build formal relationships with local youth sports organizations, park programs, and regional shelters. These partnerships will help streamline the gear donation pipeline, identify recipient families early, and ensure equipment reaches the young athletes who need it most."  client:load />
+                    <GoalAccordianComponent  title="#3: Financial & Operational Sustainability" description="Raise targeted micro-donations and local business sponsorships to fund operational overhead—specifically eco-friendly sanitization equipment, deep-cleaning supplies, storage units, and portable collection bins—ensuring all donated gear is delivered in like-new, hygienic condition at zero cost to recipients."  client:load />
                 </div>
-                <div class="w-1/2 bg-[#f1f1f1] rounded-2xl">
-                    <ImageAstroComponent img={tennis_photo} imageLink='https://www.pexels.com/photo/diverse-rackets-on-a-colorful-outdoor-court-30864601/' photoOwner='Rodrigo Ortega'/>   
+                <div class="w-1/2 rounded-2xl flex items-center">
+                    <ImageAstroComponent img={tennis_photo} imageLink='https://www.pexels.com/photo/diverse-rackets-on-a-colorful-outdoor-court-30864601/' photoOwner='Rodrigo Ortega' classes='bg-[#f1f1f1]'/>   
+                </div>
+            </div>
+        </HeadlineAstroComponent>
+    </Section>
+    <Section>
+        <HeadlineAstroComponent title='Donate' description='Help us achieve our goals.'>
+            <div class="flex flex-col gap-20 items-center">
+                <p class="text-xl text-[#222222] w-full text-center">No matter how big or how small of a donation you give, each and every one is appreciated. Help us achieve our goal of making sports affordable and available to all. Click the button below to send a secure donation through our payment processor, Stripe.</p>
+                
+                <div>
+                    <Button href='/'>Donate Now</Button>
                 </div>
             </div>
         </HeadlineAstroComponent>
