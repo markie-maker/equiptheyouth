@@ -4,14 +4,16 @@ import '../styles/global.css'
 interface Props {
     href: string;
     classes?: string;
+    [key: string]: any; 
 }
 
 const { href, classes = '', ...rest } = Astro.props
 ---
 
-<a href={href} class={
-    `inline-flex items-center justify-center gap-2 whitespace-nowrap py-4 px-12 rounded-full bold bg-[#222222] text-white button hover:shadow-md ${classes}`}
+<a 
     {...rest}
+    href={href} class={
+    `inline-flex items-center justify-center gap-2 whitespace-nowrap py-4 px-12 rounded-full bold bg-[#222222] text-white button hover:shadow-md ${classes}`}
     >
     <slot />
 </a>

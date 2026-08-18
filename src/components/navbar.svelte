@@ -2,6 +2,23 @@
     import { onMount } from 'svelte';
     import Logo from '../assets/ETY.svg?url';
 
+    const handleAnchorClick = (e) => {
+        const target = e.currentTarget;
+        const href = target.getAttribute('href');
+        
+        if (href && href.startsWith('#') && href.length > 1) {
+            e.preventDefault();
+            const element = document.querySelector(href);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                history.pushState(null, '', href);
+            }
+        }
+    };
+
     onMount(() => {
         const navbar = document.getElementById("navbar");
         let lastScrollY = window.scrollY;
@@ -29,8 +46,8 @@
     </a>
     <div class="flex gap-4 flex-row w-auto h-full">
         <a href="/" class="h-full px-12 py-4 active flex items-center rounded-xl text-[#222222] button">Home</a>
-        <a href="/" class="h-full px-12 py-4 flex items-center rounded-xl text-[#222222] button non-active">About</a>
-        <a href="/" class="h-full px-12 py-4 flex items-center rounded-xl text-[#222222] button non-active">Donate</a>
+        <a href="#about" on:click={handleAnchorClick} class="h-full px-12 py-4 flex items-center rounded-xl text-[#222222] button non-active">About</a>
+        <a href="#donate" on:click={handleAnchorClick} class="h-full px-12 py-4 flex items-center rounded-xl text-[#222222] button non-active">Donate</a>
     </div>
 </nav>
 

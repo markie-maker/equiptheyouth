@@ -28,6 +28,6 @@ const { img, imageLink, photoOwner, classes = '', isAboveFold = false } = Astro.
         alt={`Image from ${imageLink}`}
     />
     <div class="w-full h-auto light text-base p-8 text-[#222222] overlay-text">
-        <p>Photo by {photoOwner}: <br><a href={imageLink} class="underline">{imageLink}</a></p>
+        <p>Photo by {photoOwner}: <br><a target="_blank" href={imageLink} class="underline">{imageLink}</a></p>
     </div>
 </div>
