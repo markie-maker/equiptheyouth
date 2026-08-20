@@ -8,7 +8,7 @@
 
 <div class="flex flex-col gap-2 relative">
     <div style="width: 640px; height: 413px; overflow: hidden; border: 1px solid #f1f1f1;" class="rounded-xl">
-        <iframe title="Service Areas Map" src="https://www.google.com/maps/d/embed?mid=1v4fkFszjKrU2zVTiQgtHXILs1DpFLyU&hl=en" width="640" height="480" style="position: relative; margin-top: -67px; border: none;"></iframe>
+        <iframe title="Service Areas Map" src="https://www.google.com/maps/d/embed?mid=1v4fkFszjKrU2zVTiQgtHXILs1DpFLyU&hl=en" width="640" height="480" loading="lazy" style="position: relative; margin-top: -67px; border: none;"></iframe>
     </div>
 
     <div class="flex gap-6">
