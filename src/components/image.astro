@@ -17,15 +17,16 @@ const { img, imageLink, photoOwner, classes = '', isAboveFold = false } = Astro.
         src={img} 
         formats={['avif', 'webp']} 
         class={`h-full w-full object-cover object-center image rounded-2xl ${classes}`}
-        widths={[400, 800, 1200, 1600]}
-        sizes="(max-width: 1200px) 100vw, 1200px"
+        widths={[400, 600, 800, 1200]}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
         data-aos="zoom-in"
         data-aos-duration="1000"
         data-aos-delay="100"
         pictureAttributes={{ class: 'block h-full w-full' }}
         loading={isAboveFold ? 'eager' : 'lazy'}
-        quality={75}
+        quality={60}
         alt={`Image from ${imageLink}`}
+        fetchpriority={isAboveFold ? 'high' : 'low'}
     />
     <div class="w-full h-auto light text-base p-8 text-[#222222] overlay-text">
         <p>Photo by {photoOwner}: <br><a target="_blank" href={imageLink} class="underline">{imageLink}</a></p>

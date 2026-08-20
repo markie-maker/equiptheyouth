@@ -9,6 +9,11 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
+  build: {
+    // Options: 'always' (inline everything), 'auto' (inline if under 4kb), or 'never'
+    inlineStylesheets: 'auto', 
+  },
+
   integrations: [svelte()],
 
   site: 'https://equiptheyouth.org', 
