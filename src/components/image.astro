@@ -24,7 +24,7 @@ const { img, imageLink, photoOwner, classes = '', isAboveFold = false } = Astro.
         data-aos-delay={isAboveFold ? undefined : "100"}
         pictureAttributes={{ class: 'block h-full w-full' }}
         loading={isAboveFold ? 'eager' : 'lazy'}
-        quality={60}
+        quality={55}
         alt={`Image from ${imageLink}`}
         fetchpriority={isAboveFold ? 'high' : 'low'}
     />
