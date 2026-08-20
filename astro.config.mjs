@@ -11,7 +11,7 @@ export default defineConfig({
 
   build: {
     // Options: 'always' (inline everything), 'auto' (inline if under 4kb), or 'never'
-    inlineStylesheets: 'auto', 
+    inlineStylesheets: 'always', 
   },
 
   integrations: [svelte()],
