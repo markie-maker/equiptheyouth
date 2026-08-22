@@ -69,7 +69,7 @@ import tennis_photo from '../assets/tennis-photo.jpg'
                 </div>
             </HeadlineAstroComponent>
     </Section>
-    <Section>
+    <Section id="meettheteam">
         <HeadlineAstroComponent title='Meet the Team' description='Learn more about who we are and our roles.'>
             <div class="flex gap-12 w-full flex-wrap justify-center">
                 <PersonCardAstroComponent image={placeholder_portrait} name='Mark Waichigo' role='Lead Programmer • Webmaster' role_description='I built this website and also maintain it along with the non-profit email.'/>
@@ -79,13 +79,13 @@ import tennis_photo from '../assets/tennis-photo.jpg'
             </div>
         </HeadlineAstroComponent>
     </Section>
-    <Section>
+    <Section id='ourgoals'>
         <HeadlineAstroComponent title='Our Goals' description='Learn more about our non-profit and what we strive to achieve.'>
             <div class="flex gap-20">
                 <div class="w-1/2 bg-[#f1f1f1] rounded-3xl p-4 flex flex-col gap-4">
-                    <GoalAccordianComponent  title="#1: Equipment Access & Distribution" description="Set up community donation hubs near local recreational parks across French Valley and surrounding SoCal neighborhoods at the end of the Fall and Winter sports seasons. The target is to collect, thoroughly sanitize, and distribute at least 500 pieces of essential sports gear (shoes, balls, and athletic wear) directly to local shelters and families in need each year." client:visible />
-                    <GoalAccordianComponent  title="#2: Community Partnerships & Expansion" description="Build formal relationships with local youth sports organizations, park programs, and regional shelters. These partnerships will help streamline the gear donation pipeline, identify recipient families early, and ensure equipment reaches the young athletes who need it most."  client:visible />
-                    <GoalAccordianComponent  title="#3: Financial & Operational Sustainability" description="Raise targeted micro-donations and local business sponsorships to fund operational overhead—specifically eco-friendly sanitization equipment, deep-cleaning supplies, storage units, and portable collection bins—ensuring all donated gear is delivered in like-new, hygienic condition at zero cost to recipients."  client:visible />
+                    <GoalAccordianComponent title="#1: Equipment Access & Distribution" description="Set up community donation hubs near local recreational parks across French Valley and surrounding SoCal neighborhoods at the end of the Fall and Winter sports seasons. The target is to collect, thoroughly sanitize, and distribute at least 500 pieces of essential sports gear (shoes, balls, and athletic wear) directly to local shelters and families in need each year." client:visible />
+                    <GoalAccordianComponent title="#2: Community Partnerships & Expansion" description="Build formal relationships with local youth sports organizations, park programs, and regional shelters. These partnerships will help streamline the gear donation pipeline, identify recipient families early, and ensure equipment reaches the young athletes who need it most."  client:visible />
+                    <GoalAccordianComponent title="#3: Financial & Operational Sustainability" description="Raise targeted micro-donations and local business sponsorships to fund operational overhead—specifically eco-friendly sanitization equipment, deep-cleaning supplies, storage units, and portable collection bins—ensuring all donated gear is delivered in like-new, hygienic condition at zero cost to recipients."  client:visible />
                 </div>
                 <div class="w-1/2 rounded-2xl flex items-center">
                     <ImageAstroComponent img={tennis_photo} imageLink='https://www.pexels.com/photo/diverse-rackets-on-a-colorful-outdoor-court-30864601/' photoOwner='Rodrigo Ortega' classes='bg-[#f1f1f1]'/>   
@@ -112,7 +112,7 @@ import tennis_photo from '../assets/tennis-photo.jpg'
             </div>
         </HeadlineAstroComponent>
     </Section>
-    <Section>
+    <Section id='faqs'>
         <HeadlineAstroComponent title='FAQs' description='Last Updated July 2026'>
             <div class="flex flex-col gap-2">
                 <FaqsAccordianAstroComponent title='How will you market and promote Equip The Youth within the community?' description="We focus on digital outreach through localized platforms like Nextdoor, Instagram, and Facebook to directly connect with parents, coaches, and neighbors across the community." client:visible/>
