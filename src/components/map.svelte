@@ -3,7 +3,6 @@
 
     let generalService_isHovered = false
     let extendedService_isHovered = false
-    let text;
 </script>
 
 <div class="flex flex-col gap-2 relative">
@@ -21,7 +20,7 @@
                     {#if generalService_isHovered}
                         We primarily pickup and drop-off equipment here! If you are located inside this blue shaded area, you are fully covered.
                     {:else if extendedService_isHovered}
-                        Located just outside our main boundary? No problem! If you are nearby, please contact us anyway—we can usually still arrange a pickup or drop-off for you.
+                        Located just outside our main boundary? No problem! If you are nearby, please contact us anyway as we can usually still arrange a pickup or drop-off for you.
                     {/if}
                 </div>
             {/if}
