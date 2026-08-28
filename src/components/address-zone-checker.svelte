@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onDestroy, onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import booleanPointInPolygon from '@turf/boolean-point-in-polygon';
   import { point } from '@turf/helpers';
@@ -10,6 +10,37 @@
   let checkResult = null;
   let isLoading = false;
   let geojsonData = null;
+  let suggestions = [];
+  let suggestionsLoading = false;
+  let suggestionTimer;
+
+  function queueSuggestions() {
+    clearTimeout(suggestionTimer);
+    suggestions = [];
+
+    if (userAddress.trim().length < 5 || !MAPBOX_TOKEN) return;
+
+    suggestionsLoading = true;
+    suggestionTimer = setTimeout(async () => {
+      try {
+        const response = await fetch(
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(userAddress.trim())}.json?access_token=${MAPBOX_TOKEN}&country=us&types=address&autocomplete=true&limit=5`
+        );
+        const data = await response.json();
+        suggestions = data.features || [];
+      } catch (err) {
+        console.error('Address suggestions error:', err);
+        suggestions = [];
+      } finally {
+        suggestionsLoading = false;
+      }
+    }, 300);
+  }
+
+  function selectSuggestion(suggestion) {
+    userAddress = suggestion.place_name;
+    suggestions = [];
+  }
 
   onMount(async () => {
     try {
@@ -20,6 +51,8 @@
       console.error('Failed to load zone GeoJSON data:', err);
     }
   });
+
+  onDestroy(() => clearTimeout(suggestionTimer));
 
   async function checkAddress() {
     if (!userAddress.trim() || !geojsonData) return;
@@ -64,15 +97,36 @@
 <div class="flex w-full flex-col gap-4">
   <div class="flex w-full flex-col gap-4">
     <label for="address-input" class="light text-xl text-[#222222]">See If You're in Our Pickup Zone</label>
-    <div class="flex w-full gap-2">
-      <input
-        id="address-input"
-        type="text"
-        bind:value={userAddress}
-        placeholder="Enter your street address (e.g. 12345 Street, City, State Zip Code)"
-        class="min-w-0 flex-1 rounded-lg border border-gray-300 px-3 py-2 font-sans text-lg focus:outline-none focus:ring-2 focus:ring-[#222222]"
-        on:keydown={(e) => e.key === 'Enter' && checkAddress()}
-      />
+    <div class="relative flex w-full gap-2">
+      <div class="relative min-w-0 flex-1">
+        <input
+          id="address-input"
+          type="text"
+          bind:value={userAddress}
+          placeholder="Enter your street address (e.g. 12345 Street, City, State Zip Code)"
+          class="w-full rounded-lg border border-gray-300 px-3 py-4 font-sans text-lg focus:outline-none focus:ring-2 focus:ring-[#222222]"
+          on:input={queueSuggestions}
+          on:keydown={(e) => e.key === 'Enter' && checkAddress()}
+        />
+
+        {#if suggestionsLoading}
+          <div class="absolute left-0 right-0 top-full z-20 border border-t-0 border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 shadow-md">
+            Finding addresses...
+          </div>
+        {:else if suggestions.length > 0}
+          <div class="absolute left-0 right-0 top-full z-20 overflow-hidden rounded-b-lg border border-t-0 border-gray-200 bg-white shadow-md">
+            {#each suggestions as suggestion}
+              <button
+                type="button"
+                class="block w-full border-b border-gray-100 px-3 py-2 text-left font-sans text-base text-[#222222] last:border-0 hover:bg-gray-100"
+                on:click={() => selectSuggestion(suggestion)}
+              >
+                {suggestion.place_name}
+              </button>
+            {/each}
+          </div>
+        {/if}
+      </div>
       <button
         on:click={checkAddress}
         disabled={isLoading}
