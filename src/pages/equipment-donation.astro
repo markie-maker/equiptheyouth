@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Section from "../layouts/Section.astro"
+import Headline from "../components/headline.astro"
+import DonationForm from "../components/donation-form.astro"
+import AddressZoneChecker from '../components/address-zone-checker.svelte';
+---
+
+<Layout title="Equipment Donation">
+    <Section is_under_nav={true}>
+        <Headline title="Equipment Donation Form" description="Fill out the form below to get equipment to young athletes.">
+            <div class="flex gap-4 flex-col">
+                <p class="text-xl text-[#222222] w-full">
+                    Please fill out this form to make an in-kind donation of equipment or gear to Equip the Youth. Your gear/equipment will be reviewed and either approved or rejected depending on if it meets our condition criteria. You will receive an email from info@equiptheyouth.org after you fill out this form and once your photos are done being processed. Thank you for your support!
+                </p>
+                <p class="text-xl text-[#222222] w-full">
+                    While our standard pickups are strictly within our active service zones, we can occasionally accommodate donors located just outside our coverage area on a case-by-case basis. If you're right on the border, feel free to submit a request and check our map at equiptheyouth.org!
+                </p>
+            </div>
+            <div class="flex gap-8 flex-col">
+                <AddressZoneChecker client:visible/>
+                <hr class="border-0 h-0 border-t border-t-black/10 border-b border-b-white/30">
+                <DonationForm />
+            </div>
+        </Headline>
+    </Section>
+</Layout>

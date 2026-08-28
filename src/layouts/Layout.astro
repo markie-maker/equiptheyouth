@@ -40,7 +40,7 @@ const { title } = Astro.props
     <Section id="map">
       <div class="flex justify-between gap-4">
         <div class="flex flex-col gap-4" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-out-cubic" data-aos-delay="100">
-          <h2 class="text-6xl heading text-[#222222] w-full text-left" >Let's Stay in Touch</h2>
+          <h2 class="text-4xl heading text-[#222222] w-full text-left" >Let's Stay in Touch</h2>
           <p class="light text-2xl text-[#222222] w-full text-left mb-12">Follow our socials.</p>
           <p class="text-xl text-[#222222]">
             Email, follow, or look us up on Nextdoor to stay involved. Equip the Youth can help you support your community.
@@ -48,7 +48,7 @@ const { title } = Astro.props
           <a href="mailto:info@equiptheyouth.org" class="w-fit underline text-xl light">info@equiptheyouth.org</a>
           <SocialsAstroComponent />
         </div>
-        <div>
+        <div class="w-full max-w-160">
           <Map client:visible/>
         </div>
       </div>

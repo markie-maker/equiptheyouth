@@ -1,12 +1,13 @@
 ---
 interface Props {
   id?: string
+  is_under_nav?: boolean
 }
 
-const { id } = Astro.props
+const { id, is_under_nav = false } = Astro.props
 ---
 
-<section class="w-full py-12 px-4 md:py-20 md:px-8" id={id}>
+<section class={`w-full py-12 px-4 md:py-20 md:px-8 ${is_under_nav ? "mt-20" : ""}`} id={id}>
   <div class="mx-auto w-full max-w-7xl">
     <slot />
   </div>
