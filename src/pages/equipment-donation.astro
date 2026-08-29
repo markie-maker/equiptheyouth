@@ -18,7 +18,7 @@ import AddressZoneChecker from '../components/address-zone-checker.svelte';
                 </p>
             </div>
             <div class="flex gap-8 flex-col">
-                <AddressZoneChecker client:visible/>
+                <AddressZoneChecker client:only="svelte"/>
                 <hr class="border-0 h-0 border-t border-t-black/10 border-b border-b-white/30">
                 <DonationForm />
             </div>
