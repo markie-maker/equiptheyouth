@@ -130,7 +130,7 @@
       <button
         on:click={checkAddress}
         disabled={isLoading}
-        class="cursor-pointer inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-[#222222] px-12 py-4 bold text-white hover:shadow-md disabled:opacity-50"
+        class="cursor-pointer inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-[#222222] px-12 py-4 bold text-white transition-shadow ease-in-out duration-300 hover:shadow-md disabled:opacity-50"
       >
         {isLoading ? 'Checking...' : 'Check'}
       </button>
