@@ -110,15 +110,15 @@
         />
 
         {#if suggestionsLoading}
-          <div class="absolute left-0 right-0 top-full z-20 border border-t-0 border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 shadow-md">
+          <div class="absolute left-0 right-0 top-full z-20 mt-1 overflow-hidden rounded-lg border border-gray-200 bg-white px-4 py-3 text-base text-gray-600 shadow-md transition-all duration-300">
             Finding addresses...
           </div>
         {:else if suggestions.length > 0}
-          <div class="absolute left-0 right-0 top-full z-20 overflow-hidden rounded-b-lg border border-t-0 border-gray-200 bg-white shadow-md">
+          <div class="absolute left-0 right-0 top-full z-20 mt-1 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-md transition-all duration-300">
             {#each suggestions as suggestion}
               <button
                 type="button"
-                class="block w-full border-b border-gray-100 px-3 py-2 text-left font-sans text-base text-[#222222] last:border-0 hover:bg-gray-100"
+                class="block w-full px-4 py-3 text-left font-sans text-base text-[#222222] transition-colors duration-300 ease-in-out hover:bg-[#f1f1f1]"
                 on:click={() => selectSuggestion(suggestion)}
               >
                 {suggestion.place_name}
