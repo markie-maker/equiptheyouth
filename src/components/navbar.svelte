@@ -46,8 +46,8 @@
     </a>
     <div class="flex gap-4 flex-row w-auto h-full">
         <a href="/" class="h-full px-12 py-4 active flex items-center rounded-xl text-[#222222] button">Home</a>
-        <a href="#about" on:click={handleAnchorClick} class="h-full px-12 py-4 flex items-center rounded-xl text-[#222222] button non-active">About</a>
-        <a href="#donate" on:click={handleAnchorClick} class="h-full px-12 py-4 flex items-center rounded-xl text-[#222222] button non-active">Donate</a>
+        <a href="/#about" on:click={handleAnchorClick} class="h-full px-12 py-4 flex items-center rounded-xl text-[#222222] button non-active">About</a>
+        <a href="/#donate" on:click={handleAnchorClick} class="h-full px-12 py-4 flex items-center rounded-xl text-[#222222] button non-active">Donate</a>
     </div>
 </nav>
 
