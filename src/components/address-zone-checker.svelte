@@ -96,21 +96,21 @@
 
 <div class="flex w-full flex-col gap-4">
   <div class="flex w-full flex-col gap-4">
-    <label for="address-input" class="light text-xl text-[#222222]">See If You're in Our Pickup Zone</label>
-    <div class="relative flex w-full gap-2">
+    <label for="address-input" class="light text-sm sm:text-base md:text-xl text-[#222222]">See If You're in Our Pickup Zone</label>
+    <div class="relative flex w-full items-stretch gap-2">
       <div class="relative min-w-0 flex-1">
         <input
           id="address-input"
           type="text"
           bind:value={userAddress}
           placeholder="Enter your street address (e.g. 12345 Street, City, State Zip Code)"
-          class="w-full rounded-lg border border-gray-300 px-3 py-4 font-sans text-lg focus:outline-none focus:ring-2 focus:ring-[#222222]"
+          class="w-full rounded-lg border border-gray-300 px-3 py-4 font-sans text-md md:text-lg focus:outline-none focus:ring-2 focus:ring-[#222222]"
           on:input={queueSuggestions}
           on:keydown={(e) => e.key === 'Enter' && checkAddress()}
         />
 
         {#if suggestionsLoading}
-          <div class="absolute left-0 right-0 top-full z-20 mt-1 overflow-hidden rounded-lg border border-gray-200 bg-white px-4 py-3 text-base text-gray-600 shadow-md transition-all duration-300">
+          <div class="absolute left-0 right-0 top-full z-20 mt-1 overflow-hidden rounded-lg border border-gray-200 bg-white px-4 py-3 text-xs sm:text-sm md:text-base text-gray-600 shadow-md transition-all duration-300">
             Finding addresses...
           </div>
         {:else if suggestions.length > 0}
@@ -118,7 +118,7 @@
             {#each suggestions as suggestion}
               <button
                 type="button"
-                class="block w-full px-4 py-3 text-left font-sans text-base text-[#222222] transition-colors duration-300 ease-in-out hover:bg-[#f1f1f1]"
+                class="block w-full px-4 py-3 text-left text-xs sm:text-sm md:text-base text-[#222222] transition-colors duration-300 ease-in-out hover:bg-[#f1f1f1]"
                 on:click={() => selectSuggestion(suggestion)}
               >
                 {suggestion.place_name}
@@ -130,7 +130,7 @@
       <button
         on:click={checkAddress}
         disabled={isLoading}
-        class="cursor-pointer inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-[#222222] px-12 py-4 bold text-white transition-shadow ease-in-out duration-300 hover:shadow-md disabled:opacity-50"
+        class="cursor-pointer inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-[#222222] px-12 bold text-white transition-shadow ease-in-out duration-300 hover:shadow-md disabled:opacity-50"
       >
         {isLoading ? 'Checking...' : 'Check'}
       </button>

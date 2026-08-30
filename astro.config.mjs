@@ -3,6 +3,8 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import svelte from '@astrojs/svelte';
 
+import tunnel from 'astro-tunnel';
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -14,7 +16,7 @@ export default defineConfig({
     inlineStylesheets: 'always', 
   },
 
-  integrations: [svelte()],
+  integrations: [svelte(), tunnel()],
 
   site: 'https://equiptheyouth.org', 
 });

@@ -38,7 +38,7 @@ const { title } = Astro.props
     <slot />
 
     <Section id="map">
-      <div class="flex justify-between gap-4">
+      <div class="flex justify-between gap-4 flex-col md:flex-row">
         <div class="flex flex-col gap-4" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-out-cubic" data-aos-delay="100">
           <h2 class="text-4xl heading text-[#222222] w-full text-left" >Let's Stay in Touch</h2>
           <p class="light text-2xl text-[#222222] w-full text-left mb-12">Follow our socials.</p>
@@ -48,7 +48,7 @@ const { title } = Astro.props
           <a href="mailto:info@equiptheyouth.org" class="w-fit underline text-xl light">info@equiptheyouth.org</a>
           <SocialsAstroComponent />
         </div>
-        <div class="w-full max-w-160">
+        <div class="w-full max-w-160 relative">
           <Map client:visible/>
         </div>
       </div>
