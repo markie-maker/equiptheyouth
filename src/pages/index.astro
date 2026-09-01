@@ -8,6 +8,7 @@ import ImageAstroComponent from '../components/image.astro';
 import PersonCardAstroComponent from '../components/person_card.astro';
 import GoalAccordianComponent from '../components/goal-accordian.svelte'
 import FaqsAccordianAstroComponent from '../components/faqs-accordian.svelte';
+import { Picture } from 'astro:assets';
 
 import Button from '../components/button.astro';
 import AltButton from '../components/alt-button.astro';
@@ -18,17 +19,17 @@ import tennis_photo from '../assets/tennis-photo.jpg'
 ---
 
 <Layout title='Home'>
-    <div role="main" id="hero-container" class="flex md:h-screen h-svh w-full pt-12 md:pt-20">
+    <div role="main" id="hero-container" class="hidden md:flex h-screen w-full pt-20">
         <div class="flex flex-col w-1/2 h-full justify-center items-center px-16">
-            <h1 role="heading" class="text-2xl sm:text-3xl md:text-5xl hero-heading w-full mb-3 text-[#222222]" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-delay="100" >Equipping young athletes to reach their full potential</h1>
-            <p class="light text-sm sm:text-base md:text-2xl w-full mb-8 text-[#222222]" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-delay="100" >We collect, restore, and distribute used sports equipment to families in need across the Temecula Valley region.</p>
+            <h1 role="heading" class="text-5xl hero-heading w-full mb-3 text-[#222222]" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-delay="100" >Equipping young athletes to reach their full potential</h1>
+            <p class="light text-2xl w-full mb-8 text-[#222222]" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-delay="100" >We collect, restore, and distribute used sports equipment to families in need across the Temecula Valley region.</p>
             <div class="flex justify-start gap-12 w-full">
                 <div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300">
-                    <Button href="#donate">Donate</Button>
+                    <Button href="#donate">Donate Now</Button>
                 </div>
                 <!-- .button class not automatically on only for the alt button -->
                 <div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">
-                    <AltButton classes='flex hover:gap-4 transition-all duration-300 ease-in-out hover:scale-105' href="#about">Learn More <svg xmlns="http://w3.org" height="24px" viewBox="0 -960 960 960" width="24px" fill="#222222"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></AltButton>
+                    <AltButton hoverAnim={true} href="#about">Learn More <svg xmlns="http://w3.org" height="24px" viewBox="0 -960 960 960" width="24px" fill="#222222"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></AltButton>
                 </div>
             </div>
         </div>
@@ -37,23 +38,33 @@ import tennis_photo from '../assets/tennis-photo.jpg'
         </div>
     </div>
 
-    <!-- Only runs on mobile to prevent the height from changing -->
-    <script is:inline>
-        (function() {
-            if (window.innerWidth < 768) {
-                const heroContainer = document.getElementById("hero-container");
-                if (heroContainer) {
-                    heroContainer.style.height = window.innerHeight + 'px';
-                }
-            }
-        })();
-    </script>
+    <div role="main" id="hero-container" class="md:hidden flex justify-center h-[65vh] w-full mt-20 relative ">
+        <Picture 
+            src={soccer_image} 
+            formats={['avif', 'webp']} 
+            class="absolute h-full w-full object-cover object-center rounded-b-xl"
+            widths={[400, 600, 800, 1200]}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+            loading={'eager'}
+            quality={70}
+            alt="Two people playing soccer"
+            fetchpriority='high'
+        />
+        <div class="flex flex-col gap-2 z-10 p-4 self-end relative after:absolute after:inset-0 after:h-full after:w-full after:bg-gradient-to-t after:from-black/60 from-70% after:to-transparent after:rounded-b-xl">
+            <h1 role="heading" class="z-10 text-3xl sm:text-5xl hero-heading w-full text-white">Equipping young athletes to reach their full potential</h1>
+            <p class="z-10 light text-xl sm:text-2xl w-full mb-2 text-white" >We collect, restore, and distribute used sports equipment to families in need across the Temecula Valley region.</p>
 
+            <div class="flex flex-wrap flex-row gap-8 z-10">
+                <div class="flex-1 min-w-38" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300"><Button href="#donate" classes='w-full'>Donate</Button></div>
+                <div class="flex-1 min-w-45" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500"><AltButton classes='text-white!' hoverAnim={true} href="#about">Learn More <svg xmlns="http://w3.org" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></AltButton></div>
+            </div>
+        </div>
+    </div>
 
     <Section id="about">
             <HeadlineAstroComponent title='About' description='Small steps. Lasting impact.'>
-                <div class="flex gap-20">
-                    <div class="flex flex-col justify-center w-1/2" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-delay="100">
+                <div class="flex flex-col-reverse md:flex-row gap-10 md:gap-20">
+                    <div class="flex flex-col justify-center w-full md:w-1/2" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-delay="100">
                         <p class="text-sm sm:text-base md:text-xl">
                             Participation in youth sports shouldn't come down to how much money you have. Equip the Youth is built on the simple belief that every child deserves the chance to play, grow, and compete. By collecting and distributing quality used gear for free, we are providing all youth in the community with the opportunity to play sports.
                         </p>
@@ -63,7 +74,7 @@ import tennis_photo from '../assets/tennis-photo.jpg'
                             We don't need years of experience or thousands of dollars to start making a difference today. Whether you are donating money or your child’s old sports gear to us, you can make our mission a reality to making sports available to all.
                         </p>
                     </div>
-                    <div class="w-1/2 bg-[#f1f1f1] rounded-2xl" >
+                    <div class="w-full md:w-1/2 bg-[#f1f1f1] rounded-2xl" >
                         <ImageAstroComponent img={football_picture} imageLink='https://www.pexels.com/photo/boy-playing-football-209764/' photoOwner="Pixabay" classes='aspect-square' />
                     </div>
                 </div>
@@ -81,32 +92,29 @@ import tennis_photo from '../assets/tennis-photo.jpg'
     </Section>
     <Section id='ourgoals'>
         <HeadlineAstroComponent title='Our Goals' description='Learn more about our non-profit and what we strive to achieve.'>
-            <div class="flex gap-20">
-                <div class="w-1/2 bg-[#f1f1f1] rounded-3xl p-4 flex flex-col gap-4">
+            <div class="flex flex-col-reverse md:flex-row gap-16 md:gap-20">
+                <div class="w-full m:w-1/2 bg-[#f1f1f1] rounded-3xl p-4 flex flex-col gap-4">
                     <GoalAccordianComponent title="#1: Equipment Access & Distribution" description="Set up community donation hubs near local recreational parks across French Valley and surrounding SoCal neighborhoods at the end of the Fall and Winter sports seasons. The target is to collect, thoroughly sanitize, and distribute at least 500 pieces of essential sports gear (shoes, balls, and athletic wear) directly to local shelters and families in need each year." client:visible />
                     <GoalAccordianComponent title="#2: Community Partnerships & Expansion" description="Build formal relationships with local youth sports organizations, park programs, and regional shelters. These partnerships will help streamline the gear donation pipeline, identify recipient families early, and ensure equipment reaches the young athletes who need it most."  client:visible />
                     <GoalAccordianComponent title="#3: Financial & Operational Sustainability" description="Raise targeted micro-donations and local business sponsorships to fund operational overhead—specifically eco-friendly sanitization equipment, deep-cleaning supplies, storage units, and portable collection bins—ensuring all donated gear is delivered in like-new, hygienic condition at zero cost to recipients."  client:visible />
                 </div>
-                <div class="w-1/2 rounded-2xl flex items-center">
-                    <ImageAstroComponent img={tennis_photo} imageLink='https://www.pexels.com/photo/diverse-rackets-on-a-colorful-outdoor-court-30864601/' photoOwner='Rodrigo Ortega' classes='bg-[#f1f1f1]'/>   
+                <div class="w-full md:w-1/2 rounded-2xl flex items-center">
+                    <ImageAstroComponent img={tennis_photo} imageLink='https://www.pexels.com/photo/diverse-rackets-on-a-colorful-outdoor-court-30864601/' photoOwner='Rodrigo Ortega' classes='bg-[#f1f1f1] aspect-square md:aspect-auto'/>   
                 </div>
             </div>
         </HeadlineAstroComponent>
     </Section>
     <Section id='donate'>
         <HeadlineAstroComponent title='Donate' description='Help us achieve our goals.'>
-            <div class="flex flex-col gap-20 items-center">
-                <p class="text-sm sm:text-base md:text-xl text-[#222222] w-full text-center">No matter how big or how small of a donation you give, each and every one is appreciated. Help us achieve our goal of making sports affordable and available to all. Click the button below to send a secure donation through our payment processor, Stripe.</p>
+            <div class="flex flex-col gap-12 md:gap-20 items-center">
+                <p class="px-2 md:px-0 text-sm sm:text-base md:text-xl text-[#222222] w-full text-center">No matter how big or how small of a donation you give, each and every one is appreciated. Help us achieve our goal of making sports affordable and available to all. Click the button below to send a secure donation through our payment processor, Stripe.</p>
                 
-                <div class="flex justify-center gap-12 w-full">
-                    <div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300">
+                <div class="flex justify-center gap-5 sm:gap-12 w-full flex-wrap md:px-0 px-4">
+                    <div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300" class="w-full sm:w-auto sm:min-w-38">
                         <Button target="_blank" href='https://donate.stripe.com/test_4gMeVc86L3Vv4rj4zqco000'>Donate Now</Button>
                     </div>
-                    <div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">
-
-                        <!-- Don't forget to add a how to donate page! -->
-
-                        <AltButton classes='flex hover:gap-4 transition-all duration-300 ease-in-out hover:scale-105' href="/equipment-donation">Donate Equipment <svg xmlns="http://w3.org" height="24px" viewBox="0 -960 960 960" width="24px" fill="#222222"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></AltButton>
+                    <div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500" class="w-full sm:w-auto sm:min-w-38">
+                        <AltButton hoverAnim={true} href="/equipment-donation">Donate Equipment <svg class="shrink-0" xmlns="http://w3.org" height="24px" viewBox="0 -960 960 960" width="24px" fill="#222222"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></AltButton>
                     </div> 
                 </div>
             </div>

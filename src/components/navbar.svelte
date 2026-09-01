@@ -69,9 +69,9 @@
         <img src={Logo} alt="Equip the Youth logo" class="h-full w-auto p-2 md:p-0" />
     </a>
     <div class="hidden md:flex gap-3 flex-row w-auto h-full items-center">
-        <a href="/" class="h-12 px-8 bg-[#f5f5f5] flex items-center rounded-xl text-[#222222] font-medium hover:bg-black hover:text-white transition-all duration-200 button">Home</a>
-        <a href="/#about" onclick={handleAnchorClick} class="h-12 px-8 flex items-center rounded-xl text-[#222222] font-medium hover:bg-[#f5f5f5] transition-all duration-200 button">About</a>
-        <a href="/#donate" onclick={handleAnchorClick} class="h-12 px-8 flex items-center rounded-xl text-[#222222] font-medium hover:bg-[#f5f5f5] transition-all duration-200 button">Donate</a>
+        <a href="/" class="h-12 px-8 bg-[#f5f5f5] flex items-center rounded-xl text-[#222222] transition-all duration-200 button">Home</a>
+        <a href="/#about" onclick={handleAnchorClick} class="h-12 px-8 flex items-center rounded-xl text-[#222222] hover:bg-[#f5f5f5] transition-all duration-200 button">About</a>
+        <a href="/#donate" onclick={handleAnchorClick} class="h-12 px-8 flex items-center rounded-xl text-[#222222] hover:bg-[#f5f5f5] transition-all duration-200 button">Donate</a>
     </div>
 
     <div class="w-auto block md:hidden">

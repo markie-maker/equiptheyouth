@@ -13,7 +13,7 @@ const { href, classes = '', ...rest } = Astro.props
 <a 
     {...rest}
     href={href} class={
-    `inline-flex items-center justify-center gap-2 whitespace-nowrap py-4 px-12 rounded-full bold bg-[#222222] text-white button hover:shadow-md ${classes}`}
+    `min-w-38 inline-flex items-center justify-center gap-2 whitespace-nowrap md:w-auto w-full py-4 md:px-12 px-10 rounded-full bold text-sm sm:text-base bg-[#222222] text-white button hover:shadow-md ${classes}`}
     >
     <slot />
 </a>
