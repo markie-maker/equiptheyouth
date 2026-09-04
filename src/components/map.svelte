@@ -124,7 +124,7 @@
     <div bind:this={mapContainer} class="w-full h-full"></div>
   </div>
 
-  <div class="flex flex-col md:flex-row gap-6">
+  <div class="hidden md:flex flex-row gap-6">
     <div
       class="flex items-center gap-2 p-1 px-2 hover:bg-[#f1f1f1] transition-colors duration-300 ease-in-out rounded-md cursor-default"
       role="tooltip"

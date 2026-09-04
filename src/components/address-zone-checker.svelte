@@ -96,7 +96,7 @@
 
 <div class="flex w-full flex-col gap-4">
   <div class="flex w-full flex-col gap-4">
-    <label for="address-input" class="light text-sm sm:text-base md:text-xl text-[#222222]">See If You're in Our Pickup Zone</label>
+    <label for="address-input" class="cursor-text light text-base md:text-xl text-[#222222]">See If You're in Our Pickup Zone</label>
     <div class="relative flex w-full items-stretch gap-2">
       <div class="relative min-w-0 flex-1">
         <input

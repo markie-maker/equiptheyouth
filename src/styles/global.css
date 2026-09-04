@@ -161,7 +161,7 @@ body {
   position: relative;
   text-decoration: none;
   color: #222222;
-  padding-bottom: 4px;
+  padding-bottom: 2px;
 }
 
 .simple-underline::after {
