@@ -38,7 +38,7 @@ import tennis_photo from '../assets/tennis-photo.jpg'
         </div>
     </div>
 
-    <div role="main" id="hero-container" class="md:hidden flex justify-center h-[65vh] w-full mt-20 relative ">
+    <div role="main" id="hero-container" class="md:hidden flex justify-center h-[65svh] w-full mt-20 relative ">
         <Picture 
             src={soccer_image} 
             formats={['avif', 'webp']} 
@@ -83,10 +83,10 @@ import tennis_photo from '../assets/tennis-photo.jpg'
     <Section id="meettheteam">
         <HeadlineAstroComponent title='Meet the Team' description='Learn more about who we are and our roles.'>
             <div class="flex gap-12 w-full flex-wrap justify-center">
-                <PersonCardAstroComponent image={placeholder_portrait} name='Mark Waichigo' role='Lead Programmer • Webmaster' role_description='I built this website and also maintain it along with the non-profit email.'/>
-                <PersonCardAstroComponent image={placeholder_portrait} name='Kasoa Muya' role='Community Outreach Coordinator' role_description='I build relationships with local businesses and community members to secure partnerships and support our mission.'/>
-                <PersonCardAstroComponent image={placeholder_portrait} name='Ethan Munzaa' role='Social Media Manager • Treasury' role_description="I manage our organization's financial records while creating engaging digital content to grow our online presence."/>
-                <PersonCardAstroComponent image={placeholder_portrait} name='Adult' role='Advisor' role_description="I provide strategic guidance, mentorship, and oversight to help this non-profit to achieve it's goals."/>
+                <PersonCardAstroComponent image={placeholder_portrait} name='Mark Waichigo' role='Lead Programmer • Webmaster' role_description='Handles the website and the back-end tech infrastructure.'/>
+                <PersonCardAstroComponent image={placeholder_portrait} name='Kasoa Muya' role='Community Outreach Coordinator' role_description='Connects with local businesses and community groups to help build local partnerships.'/>
+                <PersonCardAstroComponent image={placeholder_portrait} name='Ethan Munzaa' role='Social Media Manager • Treasury' role_description="Keeps our financial records organized and runs our social media accounts."/>
+                <PersonCardAstroComponent image={placeholder_portrait} name='Adult' role='Advisor' role_description="Mentors us, helps with organizing events, and backs us up when we need advice."/>
             </div>
         </HeadlineAstroComponent>
     </Section>
@@ -94,9 +94,9 @@ import tennis_photo from '../assets/tennis-photo.jpg'
         <HeadlineAstroComponent title='Our Goals' description='Learn more about our non-profit and what we strive to achieve.'>
             <div class="flex flex-col-reverse md:flex-row gap-7 sm:gap-16 md:gap-20">
                 <div class="w-full m:w-1/2 bg-[#f1f1f1] rounded-3xl p-4 flex flex-col gap-4">
-                    <GoalAccordianComponent title="#1: Equipment Access & Distribution" description="Set up community donation hubs near local recreational parks across French Valley and surrounding SoCal neighborhoods at the end of the Fall and Winter sports seasons. The target is to collect, thoroughly sanitize, and distribute at least 500 pieces of essential sports gear (shoes, balls, and athletic wear) directly to local shelters and families in need each year." client:visible />
-                    <GoalAccordianComponent title="#2: Community Partnerships & Expansion" description="Build formal relationships with local youth sports organizations, park programs, and regional shelters. These partnerships will help streamline the gear donation pipeline, identify recipient families early, and ensure equipment reaches the young athletes who need it most."  client:visible />
-                    <GoalAccordianComponent title="#3: Financial & Operational Sustainability" description="Raise targeted micro-donations and local business sponsorships to fund operational overhead—specifically eco-friendly sanitization equipment, deep-cleaning supplies, storage units, and portable collection bins—ensuring all donated gear is delivered in like-new, hygienic condition at zero cost to recipients."  client:visible />
+                    <GoalAccordianComponent title="#1: Equipment Distribution" description="Partner with local non-profits and charities across French Valley and other surrounding SoCal charities to distribute at least 500 pieces of essential sports gear (shoes, balls, and athletic wear) directly to athletes who need it." client:visible />
+                    <GoalAccordianComponent title="#2: Scheduled Pickup & Collection Drives" description="Run a bi-weekly pickup service to collect donated gear directly from local homes and neighborhoods, making the donation process effortless for community members." client:visible />
+                    <GoalAccordianComponent title="#3: Financial & Operational Sustainability" description="Raise funding through donations or local business sponsorships to fund operational costs such as sanitization equipment, deep-cleaning supplies, storage units, and branded packaging ensuring all donated gear is delivered in like-new condition at little to no cost to recipients."  client:visible />
                 </div>
                 <div class="w-full md:w-1/2 rounded-2xl flex items-center">
                     <ImageAstroComponent img={tennis_photo} imageLink='https://www.pexels.com/photo/diverse-rackets-on-a-colorful-outdoor-court-30864601/' photoOwner='Rodrigo Ortega' classes='bg-[#f1f1f1] aspect-square md:aspect-auto'/>   
