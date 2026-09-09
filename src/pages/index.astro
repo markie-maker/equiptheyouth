@@ -38,7 +38,7 @@ import tennis_photo from '../assets/tennis-photo.jpg'
         </div>
     </div>
 
-    <div role="main" id="hero-container" class="md:hidden flex justify-center h-[65svh] w-full mt-20 relative ">
+    <div role="main" id="hero-container" class="md:hidden flex justify-center max-[374px]:h-132 h-112 w-full mt-20 relative ">
         <Picture 
             src={soccer_image} 
             formats={['avif', 'webp']} 
@@ -123,11 +123,11 @@ import tennis_photo from '../assets/tennis-photo.jpg'
     <Section id='faqs'>
         <HeadlineAstroComponent title='FAQs' description='Last Updated July 2026'>
             <div class="flex flex-col gap-2">
-                <FaqsAccordianAstroComponent title='How will you market and promote Equip The Youth within the community?' description="We focus on digital outreach through localized platforms like Nextdoor, Instagram, and Facebook to directly connect with parents, coaches, and neighbors across the community." client:visible/>
+                <FaqsAccordianAstroComponent title='How will you market and promote Equip The Youth within the community?' description="We focus on digital outreach through localized platforms like Nextdoor, Instagram, and Facebook to directly connect with parents, organizations, and neighbors across the community." client:visible/>
                 <FaqsAccordianAstroComponent title="What items do you accept, and how do collection and cleaning work?" description={"We accept gently or moderately used sports gear, athletic shoes, and youth activewear (like shorts, sweatpants, jerseys, and socks). We collect items through bi-weekly porch pickups through in-kind donors who fill out the <a class='simple-underline' href='/equipment-donation'>Equipment Donation form</a>. Everything we receive is deep-cleaned, sanitized, and washed before being delivered directly to local shelters and families in need."} client:visible/>
-                <FaqsAccordianAstroComponent title="What specific community need are you solving, and who is your target audience?" description="A lot of kids in French Valley and SoCal can't play sports simply because gear is too expensive. With many fees like parking, registration, and tournament travel piling up, families are often priced out by the time it gets to buy gear. We step in to give kids free equipment so cost isn't a barrier, while reaching out to parents and community members who want to help every child play." client:visible/>
+                <FaqsAccordianAstroComponent title="What specific community need are you solving, and who is your target audience?" description="A lot of youth from French Valley and neighboring SoCal communities can't play sports simply because gear is too expensive. With many fees like parking, registration, and tournament travel, many are often overwhelmed by the time it is to get gear. We strive to give equipment at little to no cost so cost isn't a barrier." client:visible/>
                 <FaqsAccordianAstroComponent title="How will you generate initial funding and maintain operational sustainability?" description="We rely on in-kind donations of equipment, which allows us to collect and distribute gear at zero cost to families. Optional monetary contributions help cover operational expenses, such as cleaning supplies, sanitization equipment, and collection infrastructure that allow us to restore equipment." client:visible/>
-                <FaqsAccordianAstroComponent title="How will you measure whether your efforts are making a real impact?" description="We track numbers like how many pieces of gear we collect and distribute, while also talking directly with local families and communities to get feedback." client:visible/>
+                <FaqsAccordianAstroComponent title="How will you measure whether your efforts are making a real impact?" description="We track numbers like how many pieces of gear we collect and distribute, while also communicating with past equipment donors to get real feedback." client:visible/>
             </div>
         </HeadlineAstroComponent>
     </Section>
