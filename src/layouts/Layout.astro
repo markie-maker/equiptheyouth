@@ -78,25 +78,22 @@ const { title } = Astro.props
         <FooterMarquee client:visible/>
     </footer>
 
-    <footer class="md:hidden box-border h-[50dvh] max-125 min-h-fit p-4 relative after:absolute after:inset-x-0 after:bottom-0 after:h-24 after:pointer-events-none after:bg-gradient-to-t after:from-[#f1f1f1] after:from-20% after:to-transparent">
-      <div class="overflow-clip rounded-sm h-full bg-[#f1f1f1] flex flex-row-reverse justify-between items-end w-full px-4">
-        <div class="max-w-3/5 max-h-125 box-border py-4 translate-y-1/2">
+    <footer class="md:hidden box-border relative after:absolute after:inset-x-0 after:bottom-0 after:h-24 after:pointer-events-none after:bg-gradient-to-t after:from-[#f1f1f1] after:from-20% after:to-transparent overflow-clip">
+      <div class="overflow-clip h-full bg-[#f1f1f1] flex items-center w-full px-6 py-8">
+        <div class="sm:w-auto w-full sm:max-w-3/5 max-w-75 max-h-125 box-border py-4 translate-y-1/4 absolute right-0 bottom-0">
           <FooterETY class="w-full h-auto block opacity-40" />
         </div>
 
-        <div class="flex flex-col gap-15 pb-4">
+        <div class="flex flex-col gap-15 z-10">
           <div class="flex flex-col text-xl gap-1 flex-wrap">
-
             <a href="/" class="light button text-[#222222]">Home</a>
             <a href="/#about" class="light button text-[#222222]">About</a>
             <a href="/#meettheteam" class="light button text-[#222222]">Meet the Team</a>
             <a href="/#ourgoals" class="light button text-[#222222]">Our Goals</a>
             <a href="/#donate" class="light button text-[#222222]">Donate Now</a>
             <a href="/#faqs" class="light button text-[#222222]">FAQs</a>
-
-              <SocialsAstroComponent />
+            <SocialsAstroComponent />
           </div>
-
           <a href="/privacy" class="underline text-xl light">Privacy Policy</a>
         </div>
       </div>
