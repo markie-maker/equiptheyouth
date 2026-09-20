@@ -3,7 +3,7 @@
 </script>
 
 
-<div class="marquee-container max-h-125 overflow-hidden bg-[#f1f1f1] py-6 flex flex-col select-none w-max relative">
+<div class="pl-4 marquee-container max-h-125 overflow-hidden bg-[#f1f1f1] py-6 flex flex-col select-none w-max relative">
   <div class="flex flex-col w-max">
     
     <div class="flex flex-col items-center gap-y-2 w-fit pt-2 animate-marquee">
